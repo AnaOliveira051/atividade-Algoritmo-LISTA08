@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+</head>
+<body>
+    Qual o modo de pagamento? (Inserir 1,2,3 ou 4)
+    
+    <ol>
+        <li>Dinheiro</li>
+        <li>Cartão de débito</li>
+        <li>Cartão de crédito</li>
+        <li>Boleto</li>
+    </ol> 
+    <input type="text" id="input_pagamento">
+
+    <button onclick="analisar()">Analisar Compra</button>
+
+    <br><br>
+    <div id="msg_pagamento"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var pagamento = input_pagamento.value;
+
+        if (pagamento == '1' || pagamento == '2') {
+            msg_pagamento.innerHTML = `Você terá que pagar a vista`;
+        }else{
+            msg_pagamento.innerHTML = `Pagamento poderá ser parcelado`; 
+        }
+    }
+</script>

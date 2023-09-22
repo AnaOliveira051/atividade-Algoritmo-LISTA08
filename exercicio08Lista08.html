@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Favorita</title>
+</head>
+<body>
+    Qual o nome da empresa? <input type="text" id="input_nomeEmpresa"><br>
+    Qual o valor da bolsa empresa? <input type="text" id="input_valorBolsa"><br>
+    Qual o valor do VR da empresa? <input type="text" id="input_valorVR"><br>
+    Qual o tempo de deslocamento da empresa para a SPTech? <input type="text" id="input_tempoDesloc">
+
+    <br><br>
+    <button onclick="analisar()">É preferida?</button>
+
+    <br><br>
+    <div id="msg_preferida"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var nomeEmpresa = input_nomeEmpresa.value;
+        var valorBolsa = Number(input_valorBolsa.value);
+        var valorVR = Number(input_valorVR.value);
+        var tempoDesloc = Number(input_tempoDesloc.value);
+
+        if(valorBolsa >= 1800 || valorVR >= 20 || tempoDesloc <= 30){
+            msg_preferida.innerHTML = `A empresa ${nomeEmpresa} é uma de suas preferências`
+        }else{
+            msg_preferida.innerHTML = `A empresa ${nomeEmpresa} está fora da sua lista`
+        }
+    }
+</script>
